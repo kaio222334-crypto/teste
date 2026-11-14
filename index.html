@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empréstimo de materiais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Empréstimo de materiais</h1>
+    <p id="resumo"></p>
+  </header>
+
+  <main>
+    <section class="painel">
+      <h2>Novo empréstimo</h2>
+      <form id="form">
+        <label>ID da pessoa
+          <input id="idPessoa" type="text" required placeholder="Ex.: 1024" autocomplete="off">
+        </label>
+        <label>Nome
+          <input id="nome" type="text" required placeholder="Nome completo" autocomplete="off">
+        </label>
+        <label>Data do empréstimo
+          <input id="data" type="date" required>
+        </label>
+        <label>Material
+          <select id="material" required></select>
+        </label>
+        <button type="submit" class="primario">Registrar empréstimo</button>
+      </form>
+
+      <details class="novo-material">
+        <summary>Adicionar material à lista</summary>
+        <div class="linha">
+          <input id="novoMaterial" type="text" placeholder="Ex.: Projetor">
+          <button type="button" id="addMaterial">Adicionar</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="painel">
+      <div class="cabecalho-lista">
+        <h2>Registros</h2>
+        <input id="busca" type="search" placeholder="Buscar por ID, nome ou material">
+      </div>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Nome</th><th>Data</th><th>Material</th><th>Situação</th><th></th></tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+      <p id="vazio" class="vazio">Nenhum empréstimo registrado ainda. Preencha o formulário para começar.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
